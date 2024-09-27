@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Node v22.9.0
 
-## Getting Started
+# SPOILER-FREE DB
 
-First, run the development server:
+Decide what's a spoiler to you and never display it again.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### hide
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ *avg score
+ *director/script/cinematographer/actors and so on
+ *genres
+ *year
+ *poster
+ *synopsis
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### set
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ *level of obscurity (range of amount of people who watched it)
+ *level of rating (dont show below the rating of 7.3/10)
+ *include or exclude
 
-## Learn More
+### search for
 
-To learn more about Next.js, take a look at the following resources:
+ **comedy movies with more than 5k views, not over 7/10 rating and excludes all results
+ Adam sandler.**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## API source
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<https://developer.themoviedb.org/reference/intro/getting-started>
+or
+<https://api-docs.letterboxd.com/>
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+(optional)
+<https://www.doesthedogdie.com/api>
