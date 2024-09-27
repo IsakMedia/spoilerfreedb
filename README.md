@@ -21,7 +21,7 @@ Decide what's a spoiler to you and never display it again.
 
 ### search for
 
- _"comedy movies with more than 5k views, not over 7/10 rating and excludes all results
+ _"comedy movies with more than 5k views, not over 7/10 rating and excludes all results with
  Adam sandler."_
 
 ## API source
