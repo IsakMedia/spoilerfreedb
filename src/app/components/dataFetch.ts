@@ -1,14 +1,17 @@
 
+import { TTrendingMovie, TMovieRes } from "@/types";
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiRAT = process.env.NEXT_PUBLIC_API_RAT;
 
 
 
-export const dataFetch = async (number: number) => {
+
+export const dataFetch = async () => {
+
     try {
 
-        const res = await fetch(`https://api.themoviedb.org/3/movie/11`, {
+        const res = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US'`, {
             method:'GET',
             headers:{
                 'Authorization': `Bearer ${apiRAT}`,
@@ -20,7 +23,8 @@ export const dataFetch = async (number: number) => {
             throw new Error(`!res.ok från if-satsen : ${res.status}`)
         }
         
-        return await res.json();
+        const jsonRes = await res.json() as TMovieRes
+        return jsonRes;
 
     } catch (error) {
         console.error("error från catchen", error);
@@ -28,5 +32,3 @@ export const dataFetch = async (number: number) => {
 
 }
 
-
-export default dataFetch;
