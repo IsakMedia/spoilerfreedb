@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useState } from "react";
-import dataFetch from "./components/dataFetch";
+import dataFetch from './components/dataFetch'
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
 
 
 const randomziser = () => {
