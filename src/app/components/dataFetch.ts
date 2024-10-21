@@ -20,14 +20,14 @@ export const dataFetch = async () => {
         });
 
         if(!res.ok) {
-            throw new Error(`!res.ok från if-satsen : ${res.status}`)
+            throw new Error(`how is res.ok feeling? : ${res.status}`)
         }
         
         const jsonRes = await res.json() as TMovieRes
         return jsonRes;
 
     } catch (error) {
-        console.error("error från catchen", error);
+        console.error("hey son, wanna play catch? ", error);
     }
 
 }

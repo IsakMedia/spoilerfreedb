@@ -7,14 +7,13 @@ import { Header } from '@/components/Header'
 
 
 
+
 export default function Home() {
 
-  // const [data, setData] = useState<TTrendingMovie[]>([]);
   const [data, setData] = useState<TMovieRes | null>(null);
 
 
   const fetchData = async () => {
-    console.log('HEJ CLIKCed');
     
     try {
       const movieData = await dataFetch();
@@ -39,9 +38,9 @@ export default function Home() {
 
         <div className="movie-grid max-w-sm w-full lg:max-w-full lg:flex">
           {data?.results.map(({id, title, poster_path, vote_average}) => (
-            <div key={id} className="movie-card h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+            <div key={id} className="movie-card h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center">
               <h2>{title}</h2>
-              <img src={poster_path} className="w-full"/>
+              <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} className="object-contain"/>
               <p>{vote_average}</p>
             </div>
           ))}
