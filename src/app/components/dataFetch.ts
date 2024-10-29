@@ -1,5 +1,5 @@
 
-import { TTrendingMovie, TMovieRes } from "@/types";
+import { TMovieDetails, TMovieRes } from "@/types";
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiRAT = process.env.NEXT_PUBLIC_API_RAT;
