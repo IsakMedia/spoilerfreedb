@@ -88,9 +88,8 @@ type TCrewMember = {
 
 
 
-// is this the same as CrewMemember? no but when will this be given?
-
-type Tperson = {
+// extended info about Production member
+type TpersonDetails = {
 
     adult: false,
     also_known_as: string[],
@@ -107,3 +106,7 @@ type Tperson = {
     popularity: number,
     profile_path:string
 }
+
+
+
+

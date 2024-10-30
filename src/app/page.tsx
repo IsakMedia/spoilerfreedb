@@ -17,7 +17,7 @@ export default function Home() {
     
     try {
       const movieData = await dataFetch();
-      console.log('MOVIE DATA', movieData);
+      console.log('MOVIE DATA on try', movieData);
       
      if(movieData) setData(movieData)
   
@@ -25,11 +25,11 @@ export default function Home() {
       console.log(error);
     }
   
-    console.log("when auth works this will give data: ",data);
   }
 
-
   return (
+    <>
+    
     <main>
       <h1>SpoilerFreeDB</h1>
       <button onClick={()=> fetchData()}>click</button>
@@ -48,6 +48,7 @@ export default function Home() {
       )}
 
     </main>
+    </>
   );
 }
 

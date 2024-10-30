@@ -3,7 +3,7 @@ import { TMovieDetails, TMovieRes } from "@/types";
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiRAT = process.env.NEXT_PUBLIC_API_RAT;
-
+const baseURL = `https://api.themoviedb.org/3/`
 
 
 
@@ -11,7 +11,7 @@ export const dataFetch = async () => {
 
     try {
 
-        const res = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US'`, {
+        const res = await fetch(`${baseURL}trending/movie/day?language=en-US'`, {
             method:'GET',
             headers:{
                 'Authorization': `Bearer ${apiRAT}`,
