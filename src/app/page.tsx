@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { dataFetch } from '../components/dataFetch'
+import { trendingMoviesFetch } from '../components/dataFetch'
 import type { TMovieRes } from '@/types'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
@@ -11,7 +11,7 @@ export default function Home() {
 
 	const fetchData = async () => {
 		try {
-			const movieData = await dataFetch()
+			const movieData = await trendingMoviesFetch()
 			console.log('MOVIE DATA on try', movieData)
 
 			if (movieData) setData(movieData)

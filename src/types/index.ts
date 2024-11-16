@@ -31,6 +31,10 @@ export type TMovieDetails = {
 	title?: string
 	vote_average?: number
 	vote_count?: number
+	credits?: {
+		cast: TCast[]
+		crew: TCrew[]
+	}
 }
 
 type TGenres = {
@@ -58,24 +62,33 @@ type TLanguage = {
 
 // PRODUCTION
 
-type TCrew = {
+type TCast = {
+	adult: boolean
+	cast_id: number
+	character: string
+	credit_id: string
+	gender: number
 	id: number
-	cast: TCrewMember[]
+	known_for_department: string
+	name: string
+	order: number
+	original_name: string
+	popularity: number
+	profile_path: string
 }
 
-type TCrewMember = {
+type TCrew = {
 	adult: boolean
 	gender: number
 	id: number
 	known_for_department: string
-	name: number
+	name: string
 	original_name: string
 	popularity: number
 	profile_path: string
-	cast_id: number
-	character: string
 	credit_id: string
-	order: number
+	department: string
+	job: string
 }
 
 // extended info about Production member

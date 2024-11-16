@@ -19,13 +19,14 @@ const page = ({ params }: TMovieParams) => {
 			console.log('MOVIE DATA on try', data)
 
 			if (movieData) {
-				console.log(movieData)
 				setData(movieData)
 			}
 		} catch (error) {
 			console.log(error)
 		}
 	}
+
+	console.log('here is set data: ', data)
 
 	useEffect(() => {
 		fetchData()
@@ -39,6 +40,9 @@ const page = ({ params }: TMovieParams) => {
 					id={data.id}
 					poster_path={data.poster_path}
 					runtime={data.runtime}
+					credits={data.credits}
+					status={data.status}
+					vote_average={data.vote_average}
 				/>
 			) : (
 				<p>Loading...</p>
