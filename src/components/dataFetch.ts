@@ -1,4 +1,4 @@
-import { TMovieDetails, TMovieRes } from '@/types'
+import { TMovieDetails, TMovieRes, TPersonDetails } from '@/types'
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY
 const apiRAT = process.env.NEXT_PUBLIC_API_RAT
@@ -15,7 +15,7 @@ export const trendingMoviesFetch = async () => {
 		})
 
 		if (!res.ok) {
-			throw new Error(`how is res.ok feeling? : ${res.status}`)
+			throw new Error(`how is trending movies feeling? : ${res.status}`)
 		}
 
 		const jsonRes = (await res.json()) as TMovieRes
@@ -53,5 +53,31 @@ export const movieDetailsFetch = async (movieId: string) => {
 		return jsonRes
 	} catch (error) {
 		console.error('hey movieId, wanna play catch? ', error)
+	}
+}
+
+export const personDetailsFetch = async (personId: string) => {
+	try {
+		const res = await fetch(
+			`${baseURL}person/${personId}?&append_to_response=credits`,
+			{
+				method: 'GET',
+				headers: {
+					Authorization: `Bearer ${apiRAT}`,
+					accept: 'application/json',
+				},
+			},
+		)
+
+		if (!res.ok) {
+			throw new Error(
+				`couldnt get crew details in API-requests : ${res.status}`,
+			)
+		}
+
+		const jsonRes = (await res.json()) as TPersonDetails
+		return jsonRes
+	} catch (error) {
+		console.error('hey personId, wanna play catch? ', error)
 	}
 }

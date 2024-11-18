@@ -10,13 +10,14 @@ type TMovieParams = {
 	}
 }
 
-const page = ({ params }: TMovieParams) => {
+const MoviePage = ({ params }: TMovieParams) => {
 	const [data, setData] = useState<TMovieDetails | null>(null)
 
 	const fetchData = async () => {
 		try {
 			const movieData = await movieDetailsFetch(params.movieId)
-			console.log('MOVIE DATA on try', data)
+
+			console.log('MOVIE DATA on try', movieData)
 
 			if (movieData) {
 				setData(movieData)
@@ -25,8 +26,6 @@ const page = ({ params }: TMovieParams) => {
 			console.log(error)
 		}
 	}
-
-	console.log('here is set data: ', data)
 
 	useEffect(() => {
 		fetchData()
@@ -51,4 +50,4 @@ const page = ({ params }: TMovieParams) => {
 	)
 }
 
-export default page
+export default MoviePage

@@ -92,19 +92,45 @@ type TCrew = {
 }
 
 // extended info about Production member
-type TpersonDetails = {
-	adult: false
-	also_known_as: string[]
-	biography: string
-	birthday: string
-	deathday: null | string
-	gender: number
-	homepage: null | string
+export type TPersonDetails = {
+	adult?: false
+	also_known_as?: string[]
+	biography?: string
+	birthday?: string
+	deathday?: null | string
+	gender?: number
+	homepage?: null | string
+	id?: number
+	imdb_id?: string
+	known_for_department?: string
+	name?: string
+	place_of_birth?: string
+	popularity?: number
+	profile_path?: string
+	credits?: {
+		cast: TCast[]
+		crew: TCrew[]
+	}
+}
+
+type TpersonCast = {}
+
+type TpersonCrew = {
+	adult: boolean
+	backdrop_path: string | null
+	character: string
+	credit_id: string
+	genre_ids: number[] // Array av genre-ID:n
 	id: number
-	imdb_id: string
-	known_for_department: string
-	name: string
-	place_of_birth: string
+	order: number
+	original_language: string
+	original_title: string
+	overview: string
 	popularity: number
-	profile_path: string
+	poster_path: string | null
+	release_date: string // Kan vara en tom sträng
+	title: string
+	video: boolean
+	vote_average: number
+	vote_count: number
 }

@@ -54,7 +54,7 @@ export const MovieDetails = ({
 				<p>Producer:</p>
 			</article>
 
-			<article className='Actors bg-gray-700'>
+			<article className='actors bg-gray-700'>
 				<p className='text-slate-300'>Actors:</p>
 				<ul className='p-0 m-0'>
 					{credits && credits.cast.length > 0 ? (

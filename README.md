@@ -73,3 +73,10 @@ department roles that are possible to filter on
 - **Crew**
   - Special Effects
   - Choreographer
+
+
+  ## UX
+
+  https://www.figma.com/design/7X0I67FrdvrUuK392xEQjt/spoilerfree?node-id=0-1&m=dev&t=oyvHTDgtJJEiLbyM-1
+
+
