@@ -33,3 +33,50 @@ or
 (optional)
 
 * <https://www.doesthedogdie.com/api>
+
+
+### Append searches crew
+
+department roles that are possible to filter on 
+
+- **Directing**
+  - Director
+- **Camera**
+  - Director of Photography
+- **Costume & Make-Up**
+  - Costume Design
+  - Makeup Artist
+  - Hairstylist
+- **Actors**
+  - Actor
+  - Voice
+  - Cameo
+- **Art**
+  - Production Design
+  - Art Direction
+  - Set Designer
+- **Writing**
+  - Screenplay
+  - Writer
+- **Production**
+  - Producer
+  - Executive Producer
+  - Casting
+- **Visual Effects**
+  - Visual Effects
+  - Visual Effects Director
+- **Editing**
+  - Editor
+- **Sound**
+  - Original Music Composer
+  - Sound Designer
+- **Crew**
+  - Special Effects
+  - Choreographer
+
+
+  ## UX
+
+  https://www.figma.com/design/7X0I67FrdvrUuK392xEQjt/spoilerfree?node-id=0-1&m=dev&t=oyvHTDgtJJEiLbyM-1
+
+
