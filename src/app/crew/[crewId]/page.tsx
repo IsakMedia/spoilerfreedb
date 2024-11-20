@@ -26,7 +26,7 @@ const PersonPage = ({ params }: TPersonParams) => {
 		}
 	}
 
-	console.log('gimme what i want', data)
+	console.log('gimme the actor detail data', data)
 
 	useEffect(() => {
 		fetchData()
@@ -47,6 +47,7 @@ const PersonPage = ({ params }: TPersonParams) => {
 					place_of_birth={data?.place_of_birth}
 					popularity={data?.popularity}
 					profile_path={data?.profile_path}
+					credits={data.credits}
 				/>
 			) : (
 				<p>Loading...</p>

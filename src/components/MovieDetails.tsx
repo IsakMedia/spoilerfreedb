@@ -57,15 +57,15 @@ export const MovieDetails = ({
 			<article className='actors bg-gray-700'>
 				<p className='text-slate-300'>Actors:</p>
 				<ul className='p-0 m-0'>
-					{credits && credits.cast.length > 0 ? (
-						credits.cast.map((actor, index) => (
-							<li key={index} className='bg-gray-800 mb-1'>
+					{credits ? (
+						credits.cast.map((actor) => (
+							<li key={actor.id} className='bg-gray-800 mb-1'>
 								<p>
 									<Link href={`/crew/${actor.id}`}>
 										<span className='font-semibold'>{actor.name}</span>
 									</Link>
-									as {''}
-									<span className='text-red-300'>{actor.character}</span>
+
+									<span className='text-red-300'>{` as ${actor.character}`}</span>
 								</p>
 							</li>
 						))

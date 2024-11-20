@@ -42,12 +42,14 @@ export const PersonDetails = ({
 				<p>Films:</p>
 
 				<ul>
-					{credits && credits.cast.length > 0 ? (
+					{credits ? (
 						credits.cast.map((film) => (
 							<li key={film.id} className='bg-gray-800 mb-1'>
 								<p>
-									<Link href={`/movie/${film.id}`}>
-										<span className='font-semibold'>does this work?</span>
+									<Link href={`/movies/${film.id}`}>
+										<span className='font-semibold'>
+											{film.title}, {film.release_date.substring(0, 4)}
+										</span>
 									</Link>
 								</p>
 							</li>

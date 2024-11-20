@@ -32,8 +32,8 @@ export type TMovieDetails = {
 	vote_average?: number
 	vote_count?: number
 	credits?: {
-		cast: TCast[]
-		crew: TCrew[]
+		cast: TMovieCast[]
+		crew: TMovieCrew[]
 	}
 }
 
@@ -62,7 +62,7 @@ type TLanguage = {
 
 // PRODUCTION
 
-type TCast = {
+type TMovieCast = {
 	adult: boolean
 	cast_id: number
 	character: string
@@ -77,7 +77,7 @@ type TCast = {
 	profile_path: string
 }
 
-type TCrew = {
+type TMovieCrew = {
 	adult: boolean
 	gender: number
 	id: number
@@ -108,19 +108,37 @@ export type TPersonDetails = {
 	popularity?: number
 	profile_path?: string
 	credits?: {
-		cast: TCast[]
-		crew: TCrew[]
+		cast: TPersonCast[]
+		crew: TPersonCrew[]
 	}
 }
 
-type TpersonCast = {}
+export type TPersonCast = {
+	adult: boolean
+	backdrop_path: string | null
+	genre_ids: number[]
+	id: number
+	original_language: string
+	original_title: string
+	overview: string
+	popularity: number
+	poster_path: string | null
+	release_date: string
+	title: string
+	video: boolean
+	vote_average: number
+	vote_count: number
+	credit_id: string
+	department: string
+	job: string
+}
 
-type TpersonCrew = {
+export type TPersonCrew = {
 	adult: boolean
 	backdrop_path: string | null
 	character: string
 	credit_id: string
-	genre_ids: number[] // Array av genre-ID:n
+	genre_ids: number[]
 	id: number
 	order: number
 	original_language: string
@@ -128,7 +146,7 @@ type TpersonCrew = {
 	overview: string
 	popularity: number
 	poster_path: string | null
-	release_date: string // Kan vara en tom sträng
+	release_date: string
 	title: string
 	video: boolean
 	vote_average: number
