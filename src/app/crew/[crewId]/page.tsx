@@ -36,17 +36,17 @@ const PersonPage = ({ params }: TPersonParams) => {
 		<div>
 			{data ? (
 				<PersonDetails
-					biography={data?.biography}
-					birthday={data?.birthday}
-					deathday={data?.deathday}
-					gender={data?.gender}
-					id={data?.id}
-					imdb_id={data?.imdb_id}
-					known_for_department={data?.known_for_department}
-					name={data?.name}
-					place_of_birth={data?.place_of_birth}
-					popularity={data?.popularity}
-					profile_path={data?.profile_path}
+					biography={data.biography}
+					birthday={data.birthday}
+					deathday={data.deathday}
+					gender={data.gender}
+					id={data.id}
+					imdb_id={data.imdb_id}
+					known_for_department={data.known_for_department}
+					name={data.name}
+					place_of_birth={data.place_of_birth}
+					popularity={data.popularity}
+					profile_path={data.profile_path}
 					credits={data.credits}
 				/>
 			) : (

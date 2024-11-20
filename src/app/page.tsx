@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { trendingMoviesFetch } from '../components/dataFetch'
 import type { TMovieRes } from '@/types'
 import { Footer } from '@/components/Footer'

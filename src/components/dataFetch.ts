@@ -1,4 +1,4 @@
-import { TMovieDetails, TMovieRes, TPersonDetails } from '@/types'
+import type { TMovieDetails, TMovieRes, TPersonDetails } from '@/types'
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY
 const apiRAT = process.env.NEXT_PUBLIC_API_RAT
