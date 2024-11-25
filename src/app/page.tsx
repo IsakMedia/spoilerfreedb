@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { Filter } from '@/components/Filter'
 
 export default function Home() {
 	const [data, setData] = useState<TMovieRes | null>(null)
@@ -26,9 +27,10 @@ export default function Home() {
 			<main>
 				<h1>SpoilerFreeDB</h1>
 				<button onClick={() => fetchData()}>click</button>
+				<Filter popularity={data?.results} />
 
 				{data && data.results.length && (
-					<div className='movie-grid max-w-sm w-full lg:max-w-full lg:flex overflow-auto'>
+					<div className='movie-grid max-w-sm w-full lg:max-w-full lg:flex  lg:overflow-auto'>
 						{data?.results.map(({ id, title, poster_path, vote_average }) => (
 							<div
 								key={id}
