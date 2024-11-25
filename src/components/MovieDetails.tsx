@@ -38,12 +38,12 @@ export const MovieDetails = ({
 		<section className='details-page'>
 			<article className='movie-card'>
 				<div className='h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center'>
-					<h2 className='text-green-900'>{title}</h2>
+					<h2 className='text-teal-300'>{title}</h2>
 					<Image
 						src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
 						width={500}
 						height={500}
-						alt='Movie Poster'
+						alt={`Movie poster for the movie: ${title}`}
 					/>
 					<p>Runtime: {runtime}min</p>
 					<p>Status: {status}</p>

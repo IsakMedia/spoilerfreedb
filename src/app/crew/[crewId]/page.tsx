@@ -2,7 +2,7 @@
 import { PersonDetails } from '@/components/PersonDetails'
 import type { TPersonDetails } from '@/types'
 import { useEffect, useState } from 'react'
-import { personDetailsFetch } from '@/components/dataFetch'
+import { personDetailsFetch } from '@/app/Services/APIfetches'
 
 type TPersonParams = {
 	params: {
