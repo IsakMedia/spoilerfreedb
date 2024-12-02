@@ -22,16 +22,23 @@ export default function Home() {
 		}
 	}
 
+	const [votesFilter, setVotesFilter] = useState(0)
+	console.log('votesFilter value: ', votesFilter)
+
 	return (
 		<>
 			<main>
 				<h1>SpoilerFreeDB</h1>
 				<button onClick={() => fetchData()}>click</button>
-				<Filter popularity={data?.results} />
+				<Filter
+					id={'votes'}
+					maxVote={10000}
+					onChange={(value: number) => setVotesFilter(value)}
+				/>
 
-				{data && data.results.length && (
-					<div className='movie-grid max-w-sm w-full lg:max-w-full lg:flex  lg:overflow-auto'>
-						{data?.results.map(({ id, title, poster_path, vote_average }) => (
+				{data?.results.map(
+					({ id, title, poster_path, vote_average, vote_count }) =>
+						vote_count! <= votesFilter ? (
 							<div
 								key={id}
 								className='movie-card h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center p-2 '
@@ -47,8 +54,7 @@ export default function Home() {
 									<p>{vote_average}</p>
 								</Link>
 							</div>
-						))}
-					</div>
+						) : null, // Return null if the condition is false
 				)}
 			</main>
 		</>

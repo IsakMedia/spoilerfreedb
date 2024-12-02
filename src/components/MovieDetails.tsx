@@ -30,10 +30,6 @@ export const MovieDetails = ({
 }: TMovieDetails) => {
 	console.log('im in movie details', title)
 
-	// const actorList = credits?.cast.map((actor, index) => {
-	// 	return <li key={index}>{actor.name}</li>
-	// })
-
 	return (
 		<section className='details-page'>
 			<article className='movie-card'>

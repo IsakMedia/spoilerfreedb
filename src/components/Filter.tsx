@@ -8,24 +8,46 @@ import { useState } from 'react'
 // create a function that sets number of votes and filter out movies based on number of votes before initial
 // fetch is done.... or filter out displayed movies after initial fetch.
 
-const maxVote = 10000
+type TfilterProps = {
+	id: string
+	maxVote: number
+	onChange: (value: number) => void
+}
 
-export const Filter = () => {
+export const Filter = ({ maxVote, id, onChange }: TfilterProps) => {
 	const [number, setNumber] = useState(0)
+
+	const handleChange = (e: any) => {
+		const value = Number(e.target.value)
+		setNumber(value)
+		onChange(value)
+	}
+
 	return (
 		<>
-			<div>filter</div>
-			<span>0 </span>
-			<input
-				type='range'
-				id='popularity'
-				name='popularity'
-				min='0'
-				max={maxVote}
-				step={1000}
-			></input>
-			<span> {maxVote}</span>
-			<output id='value'>{number}</output>
+			<h3>Filter</h3>
+			<div className='flex-col items-center gap-2'>
+				<div className='border-2 border-black max-w-max'>
+					<span>0</span>
+					<input
+						className='flex-shrink-1'
+						type='range'
+						id={id}
+						name={id}
+						min='0'
+						max={maxVote}
+						step='100'
+						value={number}
+						onChange={handleChange}
+					/>
+					<span>{maxVote}:votes</span>
+				</div>
+				<div className='content-center border-2 border-white max-w-max'>
+					<output id='value' className=''>
+						{number}
+					</output>
+				</div>
+			</div>
 		</>
 	)
 }
