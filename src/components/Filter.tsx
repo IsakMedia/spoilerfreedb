@@ -10,11 +10,11 @@ import { useState } from 'react'
 
 type TfilterProps = {
 	id: string
-	maxVote: number
+	maxValue: number
 	onChange: (value: number) => void
 }
 
-export const Filter = ({ maxVote, id, onChange }: TfilterProps) => {
+export const Filter = ({ maxValue: maxValue, id, onChange }: TfilterProps) => {
 	const [number, setNumber] = useState(0)
 
 	const handleChange = (e: any) => {
@@ -35,12 +35,11 @@ export const Filter = ({ maxVote, id, onChange }: TfilterProps) => {
 						id={id}
 						name={id}
 						min='0'
-						max={maxVote}
-						step='100'
+						max={maxValue}
 						value={number}
 						onChange={handleChange}
 					/>
-					<span>{maxVote}:votes</span>
+					<span>{maxValue}:votes</span>
 				</div>
 				<div className='content-center border-2 border-white max-w-max'>
 					<output id='value' className=''>
