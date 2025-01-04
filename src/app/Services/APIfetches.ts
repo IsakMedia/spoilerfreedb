@@ -40,8 +40,10 @@ export const getData = async <T>(
 	return response.data
 }
 
-export const trendingMoviesFetch = async () => {
-	const response = await getData<TMovieRes>('trending/movie/day?language=en-US')
+export const trendingMoviesFetch = async (page: number) => {
+	const response = await getData<TMovieRes>(
+		`trending/movie/day?page=${page}?language=en-US`,
+	)
 	return response
 }
 

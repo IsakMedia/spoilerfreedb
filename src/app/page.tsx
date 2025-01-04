@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { trendingMoviesFetch } from './Services/APIfetches'
 import type { TMovieRes } from '@/types'
 import Link from 'next/link'
@@ -11,10 +11,13 @@ import { Pagination } from '@/components/Pagination'
 
 export default function Home() {
 	const [data, setData] = useState<TMovieRes | null>(null)
+	const [page, setPage] = useState(1)
+
+	console.log('whats homepages page: ', page)
 
 	const fetchData = async () => {
 		try {
-			const movieData = await trendingMoviesFetch()
+			const movieData = await trendingMoviesFetch(page)
 			console.log('MOVIE DATA on try', movieData)
 
 			if (movieData) setData(movieData)
@@ -23,6 +26,10 @@ export default function Home() {
 		}
 	}
 
+	useEffect(() => {
+		fetchData()
+	}, [page])
+
 	const [votesFilter, setVotesFilter] = useState(0)
 	const [avScore, setAvScore] = useState(0)
 	console.log('votesFilter value: ', votesFilter)
@@ -30,6 +37,7 @@ export default function Home() {
 
 	return (
 		<>
+			{/* send it off to a header */}
 			<section className='settings'>
 				<h1>SpoilerFreeDB</h1>
 				<button onClick={() => fetchData()}>click</button>
@@ -45,6 +53,7 @@ export default function Home() {
 					onChange={(value: number) => setAvScore(value)}
 				/>
 			</section>
+
 			<main className='overflow-auto w-full h-full'>
 				<div className='flex  border-blue-400'>
 					{data?.results.map(
@@ -108,7 +117,7 @@ export default function Home() {
 				</div>
 			</main>
 			<div className='flex justify-center'>
-				<Pagination />
+				<Pagination pageNumber={page} setPage={setPage} />
 			</div>
 		</>
 	)
