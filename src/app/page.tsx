@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Filter } from '@/components/Filter'
+import { Pagination } from '@/components/Pagination'
 
 export default function Home() {
 	const [data, setData] = useState<TMovieRes | null>(null)
@@ -29,7 +30,7 @@ export default function Home() {
 
 	return (
 		<>
-			<main>
+			<section className='settings'>
 				<h1>SpoilerFreeDB</h1>
 				<button onClick={() => fetchData()}>click</button>
 				<Filter
@@ -43,7 +44,8 @@ export default function Home() {
 					maxValue={10}
 					onChange={(value: number) => setAvScore(value)}
 				/>
-
+			</section>
+			<main className='overflow-auto w-full h-full'>
 				<div className='flex  border-blue-400'>
 					{data?.results.map(
 						({ id, title, poster_path, vote_average, vote_count }) =>
@@ -51,10 +53,11 @@ export default function Home() {
 							Math.round(vote_average!) >= avScore ? (
 								<div
 									key={id}
-									className='card lg:card-side bg-base-100 shadow-xl p-3 border-blue-800'
+									className='card  bg-base-100 shadow-xl p-3 m-2 border-blue-800'
 								>
 									<figure>
 										<Image
+											className='w-full h-full object-cover'
 											src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
 											width={500}
 											height={500}
@@ -70,7 +73,28 @@ export default function Home() {
 											<p>Average score: {vote_average}</p>
 											<Link href={`/movies/${id}`}>
 												<button
-													className='"rounded-md bg-gradient-to-tr from-emerald-700 to-cyan-700 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"'
+													className='
+													"rounded-md 
+													bg-gradient-to-tr
+													from-emerald-700
+													to-cyan-700 
+													py-2 
+													px-4 
+													border 
+													border-transparent 
+													text-center 
+													text-sm 
+													text-white 
+													transition-all 
+													shadow-md 
+													hover:shadow-lg 
+													focus:bg-slate-700 
+													focus:shadow-none
+													 active:bg-slate-700
+													 hover:bg-slate-700 active:shadow-none 
+													 disabled:pointer-events-none disabled:opacity-50 
+													 disabled:shadow-none"
+													 '
 													type='button'
 												>
 													View Details
@@ -83,6 +107,9 @@ export default function Home() {
 					)}
 				</div>
 			</main>
+			<div className='flex justify-center'>
+				<Pagination />
+			</div>
 		</>
 	)
 }
