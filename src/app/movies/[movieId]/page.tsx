@@ -2,7 +2,7 @@
 import { MovieDetails } from '@/components/MovieDetails'
 import type { TMovieDetails } from '@/types'
 import { useEffect, useState } from 'react'
-import { movieDetailsFetch } from '@/components/dataFetch'
+import { movieDetailsFetch } from '@/app/Services/APIfetches'
 
 type TMovieParams = {
 	params: {
